@@ -1,0 +1,25 @@
+package Condicional;
+
+import java.util.Scanner;
+
+public class calculoIMC {
+   public static void main(String[] args) {
+      Scanner teclado = new Scanner(System.in);
+      double pesoIdeal = 0.0D;
+      System.out.println("CÁLCULO DO PESO IDEAL");
+      System.out.println("");
+      System.out.println("Digite seu sexo biológico [masculino/feminino]");
+      String sexo = teclado.next();
+      System.out.println("Digite sua altura: ");
+      double altura = teclado.nextDouble();
+      if (sexo.equalsIgnoreCase("feminino")) {
+         pesoIdeal = 62.1D * altura - 44.7D;
+      } else if (sexo.equalsIgnoreCase("masculino")) {
+         pesoIdeal = 72.7D * altura - 58.0D;
+      } else {
+         System.out.println("sexo inválido");
+      }
+
+      System.out.println("O peso idal para uma pessoa com " + altura + "cm de altura é de " + pesoIdeal + "kg.");
+   }
+}
